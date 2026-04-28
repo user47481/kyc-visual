@@ -485,9 +485,11 @@ function SidePanel({ row, isOpen, onClose, onUpdate, onAction, panelWidth }) {
           <button className={tab === "images" ? "active" : ""} onClick={() => setTab("images")}>
             <Icons.Image /> Files <span className="count">3</span>
           </button>
-          <button className={tab === "ondato" ? "active" : ""} onClick={() => setTab("ondato")}>
-            <Icons.Bolt /> Ondato
-          </button>
+          {row.validator_type === "ondato" && (
+            <button className={tab === "ondato" ? "active" : ""} onClick={() => setTab("ondato")}>
+              <Icons.Bolt /> Ondato
+            </button>
+          )}
         </nav>
 
         <div className="panel-body">
